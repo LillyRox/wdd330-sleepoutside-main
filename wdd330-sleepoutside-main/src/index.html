@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Daily motivation and wellness tracker app with quotes, mood tracking, and mindfulness prompts." />
+    <meta name="keywords" content="wellness, motivation, mindfulness, quotes, mood tracker" />
+    <meta name="author" content="Your Name" />
+    <title>Daily Motivation & Wellness Tracker</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="./js/main.js" type="module" defer></script>
+  </head>
+
+  <body>
+    <header class="divider" id="main-header" role="banner">
+      <nav aria-label="Main navigation">
+        <!-- Navigation can go here -->
+      </nav>
+    </header>
+
+    <main class="divider">
+      <!-- Hero section -->
+      <section class="hero" aria-label="Hero section">
+        <img
+          src="/images/zen-banner.jpg"
+          srcset="/images/zen-banner-sm.jpg 500w, /images/zen-banner.jpg"
+          alt="Relaxing nature background"
+        />
+        <div class="logo logo--square" role="img" aria-label="Daily Wellness logo">
+          <img src="/images/motivation-icon.svg" alt="Motivation icon" />
+          <div>Daily <span class="highlight">Wellness</span></div>
+        </div>
+        <div class="mission">
+          <p>Your daily space to reflect, motivate, and nurture your emotional wellness.</p>
+        </div>
+      </section>
+
+      <!-- Categories navigation -->
+      <section class="categories" aria-label="Categories">
+        <p>Daily quote and emotional wellness.</p>
+        <p>
+          Every day, receive inspiration, track your mood, and reflect on your wellbeing.
+        </p>
+        <ul class="category-list">
+          <li>
+            <a href="#daily-quote">
+              <img src="/images/quote.svg" alt="Quote icon" />
+              Daily Quote
+            </a>
+          </li>
+          <li>
+            <a href="#mood-tracker">
+              <img src="/images/mood.svg" alt="Mood icon" />
+              Mood Tracker
+            </a>
+          </li>
+          <li>
+            <a href="#mindfulness">
+              <img src="/images/meditation.svg" alt="Meditation icon" />
+              Quick Reflection
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Daily quote section -->
+      <section id="daily-quote" class="content-section" aria-labelledby="quote-heading">
+        <h2 id="quote-heading">Your Daily Quote</h2>
+        <blockquote id="quote-text">Loading quote...</blockquote>
+        <p id="quote-author" aria-live="polite"></p>
+      </section>
+
+      <!-- Mood tracker -->
+      <section id="mood-tracker" class="content-section" aria-labelledby="mood-heading">
+        <h2 id="mood-heading">How are you feeling today?</h2>
+        <form id="mood-form" aria-describedby="mood-desc">
+          <p id="mood-desc" class="sr-only">Use this form to track your mood and thoughts.</p>
+          <label for="mood-select">Select your mood:</label>
+          <select id="mood-select" name="mood" required>
+            <option value="" disabled selected>-- Select one --</option>
+            <option value="happy">😊 Happy</option>
+            <option value="sad">😢 Sad</option>
+            <option value="anxious">😰 Anxious</option>
+            <option value="motivated">💪 Motivated</option>
+            <option value="relaxed">🧘 Relaxed</option>
+          </select>
+
+          <label for="mood-note">Want to write something?</label>
+          <textarea
+            id="mood-note"
+            name="note"
+            rows="3"
+            placeholder="Write here..."
+          ></textarea>
+          <button type="submit" aria-label="Save mood entry">Save</button>
+        </form>
+      </section>
+
+      <!-- Mindfulness prompt -->
+      <section id="mindfulness" class="content-section" aria-labelledby="mindfulness-heading">
+        <h2 id="mindfulness-heading">Quick Reflection</h2>
+        <button id="prompt-button" aria-label="Get a reflection prompt">Give me a reflection</button>
+        <p id="prompt-display" class="prompt-text" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer id="main-footer" role="contentinfo">
+      <p>&copy; <span id="year"></span> Daily Wellness. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
